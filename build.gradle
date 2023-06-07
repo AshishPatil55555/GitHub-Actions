@@ -23,3 +23,9 @@ dependencies {
 bootJar {
     enabled = true
 }
+
+// Add the following task to copy the JAR file to the desired location
+task copyJar(type: Copy) {
+    from bootJar.archivePath
+    into 'docker-build/libs'
+}
